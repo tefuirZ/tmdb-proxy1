@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMDB API 代理服务</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+        }
+        code {
+            background-color: #f8f8f8;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        .note {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TMDB API 代理服务</h1>
+        <p>这是一个代理 TMDB API 和图片的服务，使用 Netlify Functions 实现。</p>
+        
+        <h2>使用方法</h2>
+        <p>API 代理：</p>
+        <pre><code>https://你的域名/3/movie/popular?api_key=你的API密钥</code></pre>
+        
+        <p>图片代理（方式1 - 直接重定向）：</p>
+        <pre><code>https://你的域名/t/p/w500/图片路径.jpg</code></pre>
+        
+        <p>图片代理（方式2 - 通过函数处理）：</p>
+        <pre><code>https://你的域名/image/w500/图片路径.jpg</code></pre>
+        
+        <div class="note">
+            <p><strong>提示：</strong> 两种图片代理方式的区别：</p>
+            <ul>
+                <li>方式1（/t/p/）：直接重定向到TMDB图片服务器，速度更快，但可能受到TMDB的地区限制</li>
+                <li>方式2（/image/）：通过Netlify函数处理，可以绕过某些地区限制，但可能速度稍慢</li>
+            </ul>
+        </div>
+        
+        <h2>项目说明</h2>
+        <p>本项目用于代理 TMDB 的 API 请求和图片资源，解决跨域和访问问题。</p>
+        <p>项目源码：<a href="https://github.com/imaliang/tmdb-proxy" target="_blank">GitHub 仓库</a></p>
+    </div>
+</body>
+</html>

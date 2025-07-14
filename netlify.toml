@@ -1,0 +1,23 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/"
+  to = "https://github.com/imaliang/tmdb-proxy"
+  status = 301
+  force = true
+
+
+
+# 图片代理方式2：通过Netlify函数处理（如果需要额外处理或缓存）
+[[redirects]]
+  from = "/image/*"
+  to = "/.netlify/functions/image-proxy/t/p/:splat"
+  status = 200
+
+# API代理
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/tmdb"
+  status = 200

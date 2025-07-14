@@ -1,41 +1,44 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**
-!**/src/test/**
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-
-### VS Code ###
-.vscode/
-
-### 自定义 ###
-data/
+# 依赖目录
 node_modules/
-docs/.vuepress/dist/
-.deploy*/
-package-lock.json
-yarn.lock
+
+# 构建输出
+.netlify/
+
+# 本地环境文件
 .env
 .env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 编辑器目录和文件
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 锁文件
+package-lock.json
+yarn.lock
+
+# 缓存目录
+.cache/
+.netlify/
+
+# 本地Netlify CLI数据
+.netlify/
+
+# 构建目录
+dist/
+build/
+.next/
+out/
