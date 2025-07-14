@@ -8,7 +8,11 @@
   status = 301
   force = true
 
-
+# 图片代理方式1：直接重定向到TMDB图片服务器
+[[redirects]]
+  from = "/t/p/*"
+  to = "https://image.tmdb.org/t/p/:splat"
+  status = 200
 
 # 图片代理方式2：通过Netlify函数处理（如果需要额外处理或缓存）
 [[redirects]]
